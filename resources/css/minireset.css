@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'milker';
+    src: url('../../public/fonts/MILKER.OTF');
+}
+@font-face {
+    font-family: 'poppinsReg';
+    src: url('../../public/fonts/Poppins-Regular.otf');
+}
+@font-face {
+    font-family: 'poppinsLight';
+    src: url('../../public/fonts/Poppins-Light.otf');
+}
+:root{
+    --bgcolor:#0F0F0F;
+    --buttonColor:#520993;
+    --titleFont: 'milker';
+    --RegFont: 'poppinsReg';
+    --LightFont: 'poppinsLight';
+}
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
