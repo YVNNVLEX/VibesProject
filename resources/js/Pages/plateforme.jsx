@@ -1,8 +1,11 @@
 import {react,useState} from 'react'
 import Vibeslogo from '../icons/vibes';
-// import { SearchIcons } from "../icons/search";
-// import { UserIcon } from "../icons/user";
-// import { SignalIcons } from "../icons/SignalIcons";
+import  SearchIcons  from "../icons/SearchIcons.jsx";
+import  UserIcons  from "../icons/user";
+import  BellIcon from "../icons/bell";
+import HomeIcons from '../icons/home'
+import PlaylistIcons from '../icons/playlist.jsx'
+import FavoriteIcons from '../icons/Favorite.jsx'
 const Vibes = ()=>{
     const [search, setSearch] =useState("") 
     
@@ -22,27 +25,41 @@ const Vibes = ()=>{
                     <Vibeslogo />
                 </div>
                 <div className="search">
-                    <input type="search" value={search} onChange={handleChange} />
+                    <input type="text" value={search} onChange={handleChange} placeholder="Entrez la musique, l'album ou l'artiste..."/>
                     <div className="contSearch">
-                        {/* <SearchIcons /> */}
+                        <SearchIcons />
                     </div>
                 </div>
                 <div className="end_top_icons">
                     <div className="cont_usericons">
-                        {/* <UserIcon /> */}
+                        <UserIcons />
                     </div>
                     <div className="cont_signalicons">
-                        {/* <SignalIcons /> */}
+                        <BellIcon />
                     </div>
                 </div>
             </div>
             <div className="middle">
                 <div className="left">
-                    
+                    <div className="cont">
+                        <HomeIcons />
+                        <span>ACCEUIL</span>
+                    </div>
+                    <div className="cont">
+                        <PlaylistIcons />
+                        <span>PLAYLIST</span>
+                    </div>
+                    <div className="cont">
+                        <FavoriteIcons />
+                        <span>FAVORIS</span>
+                    </div>
                 </div>
                 <div className="right">
 
                 </div>
+            </div>
+            <div className="lecture">
+                
             </div>
         </>
     )

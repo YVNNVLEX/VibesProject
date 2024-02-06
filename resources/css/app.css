@@ -202,3 +202,104 @@ form p{
 form input:focus{
     border: none;
 }
+
+
+/*    Plateforme style       */
+.top,.search,.end_top_icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding: 0 20px;
+}
+.search{
+    margin-left: auto;
+    gap:10px;
+}
+.end_top_icons{
+    margin-left: auto;
+    gap:15px;
+
+}
+.search input{
+    width: 25vw;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    border: none;
+    font-family: var(--LightFont);
+    font-size: x-small;
+    color: white;
+}
+.search input:focus{
+    outline: none;
+}
+.search .contSearch{
+    border-radius: 10px;
+    width:32px;
+}
+.search .contSearch,.end_top_icons .cont_usericons,.cont_signalicons{
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    cursor: pointer;
+    background: linear-gradient(142deg, rgba(66,64,64,1) 0%, rgba(15,15,15,1) 100%);    
+}
+.contSearch svg,.end_top_icons .cont_usericons svg{
+    width: 1.5vw;
+}
+.cont_signalicons svg{
+    width: 3.5vw;
+}
+.end_top_icons .cont_usericons,.cont_signalicons{
+    width: 50px;
+    height: 50px;
+    padding:10px;
+    border-radius: 100%;
+}
+.middle{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap:10px;
+    padding: 0 15px;
+    margin-top: 10px;
+}
+.left,.right{
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    padding: 10px;
+    height: 75vh;
+}
+.left .cont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+    cursor: pointer;
+}
+.left .cont:hover{
+    background: linear-gradient(142deg, rgba(66,64,64,1) 0%, rgba(15,15,15,1) 100%);
+    padding: 5px;
+    border-radius: 10px;
+}
+.left{
+    gap:30px;
+}
+.left .cont svg{
+    width: 1.5vw;
+}
+.left .cont span{
+    font-family: var(--titleFont);
+    color: white;
+    font-size: 0.8em;
+    font-kerning:4px;
+}
+.right{
+    
+}
