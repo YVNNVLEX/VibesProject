@@ -4,13 +4,14 @@ import Vibeslogo from '../icons/vibes';
 import Griffes from '../icons/griffes';
 import Card from "../components/card";
 import coverImage from '../../../public/assets/coverpage.png';
+
 const Acceuil = () => {
     return (
         <>
             <header className='header'>
                 < Vibeslogo/>
                 <ul>
-                    <li> <Link href="/SignUp">Connexion</Link> </li>
+                    <li> <Link href="/login">Connexion</Link> </li>
                     <li>Essayer <br /> Gratuitement</li>
                 </ul>
             </header>

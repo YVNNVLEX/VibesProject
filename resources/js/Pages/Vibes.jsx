@@ -6,7 +6,10 @@ import  BellIcon from "../icons/bell";
 import HomeIcons from '../icons/home'
 import PlaylistIcons from '../icons/playlist.jsx'
 import FavoriteIcons from '../icons/Favorite.jsx'
-const Vibes = ()=>{
+
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+
+const Vibes = ({auth})=>{
     const [search, setSearch] =useState("") 
     
       function handleChange(e) {
@@ -30,6 +33,9 @@ const Vibes = ()=>{
                         <SearchIcons />
                     </div>
                 </div>
+                <div>
+                    <AuthenticatedLayout user={auth.user}/>
+                </div>
                 <div className="end_top_icons">
                     <div className="cont_usericons">
                         <UserIcons />
@@ -43,7 +49,7 @@ const Vibes = ()=>{
                 <div className="left">
                     <div className="cont">
                         <HomeIcons />
-                        <span>ACCEUIL</span>
+                        <span>ACCUEIL</span>
                     </div>
                     <div className="cont">
                         <PlaylistIcons />
@@ -55,7 +61,7 @@ const Vibes = ()=>{
                     </div>
                 </div>
                 <div className="right">
-
+                        
                 </div>
             </div>
             <div className="lecture">
