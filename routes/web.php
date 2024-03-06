@@ -19,15 +19,15 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Acceuil');
 });
-
+/*
 Route::get('/signin', function () {
-    return Inertia::render('SignIn');
+    return Inertia::render('Register');
 });
 
 Route::get('/signup', function () {
-    return Inertia::render('SignUp');
+    return Inertia::render('Login');
 });
-
+*/
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

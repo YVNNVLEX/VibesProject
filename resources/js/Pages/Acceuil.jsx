@@ -11,7 +11,7 @@ const Acceuil = () => {
             <header className='header'>
                 < Vibeslogo/>
                 <ul>
-                    <li> <Link href="/login">Connexion</Link> </li>
+                    <li> <a href="/login">Connexion</a> </li>
                     <li>Essayer <br /> Gratuitement</li>
                 </ul>
             </header>

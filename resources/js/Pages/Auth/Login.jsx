@@ -1,11 +1,18 @@
-import { useEffect } from 'react';
+/*import { useEffect } from 'react';
 import Checkbox from '@/Components/Checkbox';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';*/
+
+import React,{useEffect}from 'react';
+import { Link ,useForm} from '@inertiajs/inertia-react';
+import Checkbox from '@/Components/Checkbox';
+import Vibeslogo from '../../icons/vibes';
+import blur from '../../../../public/assets/blur.png'
+import loginTof from '../../../../public/assets/loginTof.png'
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -26,72 +33,59 @@ export default function Login({ status, canResetPassword }) {
         post(route('login'));
     };
 
-    return (
-        <GuestLayout>
-            <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
 
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
+    return(
+        <>
+           <div className="blur">
+                <img src={blur} className='blur1'/>
+                <img src={blur} className='blur2'/>
+           </div>
+           <div className="container">
+                <div className="logo">
+                    <Link href="/">
+                        <Vibeslogo />
+                    </Link>
                 </div>
+                <div className="forms" onSubmit={submit}>
+                    <img src={loginTof} alt='women who listen music' className="loginTof"/>
+                    <div className="form">
+                        <h1>Connexion</h1>
+                        <p> <span>Salut 👋🏾</span> <br />
+                        Veuillez entrez vos informations confidentielles</p>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
 
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                    />
+                        <form className="ConForm">
+                            <div className="numdiv">
+                                <label htmlFor="email">Email</label>
+                                <input id="email" value={data.email} onChange={(e)=>setData('email',e.target.value)} type='email'/>
+                            </div>
 
-                    <InputError message={errors.password} className="mt-2" />
+                            <div className="passwdiv">
+                                <label htmlFor="password">Mot de passe</label>
+                                <input id="password" value={data.password} onChange={(e)=>setData('password',e.target.value)} type="password"/>         
+                            </div>
+
+                            <label className="flex items-center">
+                                <Checkbox
+                                    name="remember"
+                                    checked={data.remember}
+                                    onChange={(e) => setData('remember', e.target.checked)}
+                                />
+                                <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                            </label>
+
+                            <p>Mot de passe oublié ?</p>
+                            <input type="submit" className="subscribe" value={"Connexion"}/>
+                            <a href="/register " method="get"> <p>Pas encore de compte?</p> </a>
+
+                        </form>
+
+
+                    </div>
                 </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) => setData('remember', e.target.checked)}
-                        />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
-    );
+           </div>
+        </>
+    )
 }
